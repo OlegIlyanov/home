@@ -1,11 +1,12 @@
-body {
+ body {
         margin: 0;
     }
     .odd {
         float: left;
-        width: 100vmin;
-        height: 12.5vmin;
-        background: linear-gradient(to left,
+        width: 12.5vmin;
+        height: 100vmin;
+        
+        background: linear-gradient(to top,
         white 0, white 12.5%,
         black 12.5%, black 25%,
         white 25%, white 37.5%,
@@ -17,9 +18,9 @@ body {
          }
     .even {
         float: left;
-        width: 100vmin;
-        height: 12.5vmin;
-        background: linear-gradient(to right,
+        width: 12.5vmin;
+        height: 100vmin;
+        background: linear-gradient(to bottom,
         white 0, white 12.5%,
         black 12.5%, black 25%,
         white 25%, white 37.5%,
