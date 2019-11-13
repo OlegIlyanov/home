@@ -6,52 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    body {
-        width: 450px;
-        height: 68px;
-    }
-    .nomber {
-        font-size: 22px;
-        text-align: center;
-        letter-spacing: 12px;
+    div {
+        float: left;
+        padding: 10px;
+        font-size: 28px;
         border-bottom: 3px solid Gainsboro;
         padding-bottom: 20px;
     }
     .dash {
-        border-bottom: 2px solid royalblue;
+        border-bottom: 3px solid royalblue;
         color: royalblue;
     }
     .active {
-        float: none;
-        background: orange;
-        color: white;
-        padding-left: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        border-bottom: 3px solid Gainsboro;
-
+        border-bottom: 3px solid orange;
     }
     .line {
-
+        border: none;
+        padding: 5px 10px 5px 10px;
+        margin: -5px -10px -5px -10px;
+        background-color: orange; 
+        color: white;
+    }
 
     }
     </style>
 </head>
 <body>
-    <div class="nomber">
-        <a class="dash">1</a>
-        <a class="dash">2</a>
-        <a class="dash">3</a>
-        <a class="active">4</a>
-        <a class="dash">5</a>
-        <a class="dash">6</a>
-        <a class="dash">7</a>
-        <a class="dash">8</a>
-        <a class="dash">9</a>
-        <a class="dash">10</a>
-
-    </div>
-
-
+    <div class="dash">1</div>
+    <div class="dash">2</div>
+    <div class="dash">3</div>
+    <div class="active"><div class="line">4</div></div>
+    <div class="dash">5</div>
+    <div class="dash">6</div>
+    <div class="dash">7</div>
+    <div class="dash">8</div>
+    <div class="dash">9</div>
+    <div class="dash">10</div>
 </body>
 </html>
