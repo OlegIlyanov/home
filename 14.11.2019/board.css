@@ -1,0 +1,31 @@
+body {
+        margin: 0;
+    }
+    .odd {
+        float: left;
+        width: 100vmin;
+        height: 12.5vmin;
+        background: linear-gradient(to left,
+        white 0, white 12.5%,
+        black 12.5%, black 25%,
+        white 25%, white 37.5%,
+        black 37.5%, black 50%,
+        white 50%, white 62.5%,
+        black 62.5%, black 75%,
+        white 75%, white 87.5%,
+        black 87.5%, black)
+         }
+    .even {
+        float: left;
+        width: 100vmin;
+        height: 12.5vmin;
+        background: linear-gradient(to right,
+        white 0, white 12.5%,
+        black 12.5%, black 25%,
+        white 25%, white 37.5%,
+        black 37.5%, black 50%,
+        white 50%, white 62.5%,
+        black 62.5%, black 75%,
+        white 75%, white 87.5%,
+        black 87.5%, black);
+    }
