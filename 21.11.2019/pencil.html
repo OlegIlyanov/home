@@ -10,26 +10,54 @@
             margin: 0;
         }
         #pen {
-            float: ;
-            height: 100px;
-            background: red;
+            height: 99px;
+            background: yellow;
             background: linear-gradient(to top, 
-            yellow 0px, yellow 34px,
-            #BDB76B 34px, #BDB76B 66px,
-            yellow 66px) 
+            yellow 0px, yellow 33px,
+            #BDB76B 33px, #BDB76B 66px,
+            yellow 66px); 
+            border-top: 62px;
+	        border-left: 124px; 
+	        border-bottom: 62px; 
         }
         #triangle {
             float: right;
 	        width: 0;
 	        height: 0;
-	        border-top: 50px solid transparent;
-	        border-left: 100px solid red;
-	        border-bottom: 50px solid transparent;
-}
+	        border-top: 62px solid transparent;
+	        border-left: 124px solid sienna;
+	        border-bottom: 62px solid transparent;
+            -moz-border-radius: 62px;
+            -webkit-border-radius: 62px;
+            margin-top: -12.5px;
+            position: relative;
+            }
+        #triangle2 {
+            float: right;
+	        width: 0;
+	        height: 0;
+	        border-top: 30px solid transparent;
+	        border-left: 60px solid black;
+	        border-bottom: 30px solid transparent;
+            -moz-border-radius: 30px;
+            -webkit-border-radius: 30px;
+            margin-top: 19px;
+            margin-right: -123.5px;
+            position: relative;
+            }
+        #square {
+            float: right;
+	        width: 100px;
+	        height: 100px;
+	        background: white;
+            margin-right: -125px;
+            }
     </style>
 </head>
 <body>
     <div id="pen"><div>
     <div id="triangle"></div>
+    <div id="triangle2"></div>
+    <div id="square"></div>
 </body>
 </html>
