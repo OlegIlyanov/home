@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pencil {
+            position: relative;
+            border-top: 20px solid lightblue;
+            border-bottom: 20px solid lightblue;
+            height: 20px;
+            background-color: blue;
+            width: calc(100% - 50px);
+            }
+        .pencil::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            border-left: 50px solid yellow;
+            border-top: 38px solid transparent;
+            border-bottom: 38px solid transparent;
+            position: relative;
+            left: calc(100% - 10px);
+            top: -28px;
+            }
+
+        .pencil::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            border-left: 25px solid black;
+            border-top: 19px solid transparent;
+            border-bottom: 19px solid transparent;
+            position: relative;
+            left: calc(100% + 15px);
+            top: -85px;
+            }
+    </style>
+</head>
+<body>
+    <div class="pencil"></div>
+</body>
+</html>

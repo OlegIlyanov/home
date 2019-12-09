@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [type=radio] {
+            display: none;
+}
+        label {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chess_Pieces_Sprite.svg/330px-Chess_Pieces_Sprite.svg.png);
+            background-repeat: no-repeat;
+            display: block;
+            width: 55px;
+            height: 55px;
+}
+
+        #pos1:checked~label[for=pos1] {
+            background-position: 0 0;
+}
+        #pos2:checked~label[for=pos2] {
+            background-position: -55px 0;
+}
+        #pos3:checked~label[for=pos3] {
+            background-position: calc(-55px * 2) 0;
+}
+        #pos4:checked~label[for=pos4] {
+            background-position: calc(-55px * 3) 0;
+}
+        #pos5:checked~label[for=pos5] {
+            background-position: calc(-55px * 4) 0;
+}
+        #pos6:checked~label[for=pos6] {
+            background-position: calc(-55px * 5) 0;
+}
+        #pos7:checked~label[for=pos7] {
+            background-position: 0 -55px;
+}
+        #pos8:checked~label[for=pos8] {
+            background-position: calc(-55px * 1) -55px;
+}
+        #pos9:checked~label[for=pos9] {
+            background-position: calc(-55px * 2) -55px;
+}
+        #pos10:checked~label[for=pos10] {
+            background-position: calc(-55px * 3) -55px;
+}
+        #pos11:checked~label[for=pos11] {
+            background-position: calc(-55px * 4) -55px;;
+}   
+        #pos12:checked~label[for=pos12] {
+            background-position: calc(-55px * 5) -55px;
+}
+    </style>
+</head>
+<body>
+        <input type="radio" name="switch" id="pos1" checked/>
+        <input type="radio" name="switch" id="pos2"/>
+        <input type="radio" name="switch" id="pos3"/>
+        <input type="radio" name="switch" id="pos4"/>
+        <input type="radio" name="switch" id="pos5"/>
+        <input type="radio" name="switch" id="pos6"/>
+        <input type="radio" name="switch" id="pos7"/>
+        <input type="radio" name="switch" id="pos8"/>
+        <input type="radio" name="switch" id="pos9"/>
+        <input type="radio" name="switch" id="pos10"/>
+        <input type="radio" name="switch" id="pos11"/>
+        <input type="radio" name="switch" id="pos12"/>
+        <label for="pos1"></label>
+        <label for="pos2"></label>
+        <label for="pos3"></label>
+        <label for="pos4"></label>
+        <label for="pos5"></label>
+        <label for="pos6"></label>
+        <label for="pos7"></label>
+        <label for="pos8"></label>
+        <label for="pos9"></label>
+        <label for="pos10"></label>
+        <label for="pos11"></label>
+        <label for="pos12"></label>
+</body>
+</html>
