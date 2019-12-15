@@ -95,6 +95,11 @@
             color: black;
             position: absolute;
             right: 0;
+            transition: 1s;
+        }
+        aside>ul>li>input:checked+label::after  {
+            transform: rotate(118.5deg);
+            color: silver;        
         }
         aside label {
             display: block;
