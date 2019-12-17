@@ -6,47 +6,133 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Фотогалерея</title>
-</head>
+    <style>
+    .slide {
+         opacity: 0;
+		}
+		input[name=photos] {
+			display: none;
+		}
+		.slide {
+			display: none;
+		}
 
+		#one:checked~#slider>.slide:nth-child(1),
+		#two:checked~#slider>.slide:nth-child(2),
+		#three:checked~#slider>.slide:nth-child(3),
+		#four:checked~#slider>.slide:nth-child(4),
+		#five:checked~#slider>.slide:nth-child(5) {
+opacity:1;
+}
+		.slide {
+			position: relative;
+		}
+		.prevSlide, .nextSlide {
+			position: absolute;
+			top: calc(50% - 1em);
+		}
+		.prevSlide::before {
+			display: block;
+			content: "<";
+		}
+		.nextSlide::before {
+			display: block;
+			content: ">"
+		}
+		.prevSlide {
+			left: 0;
+		}
+		.nextSlide {
+			right: 0;
+		}
+		.slide {
+			text-align: center;
+			min-width: 170px;
+		}
+		.pins>label {
+			border-radius: 50%;
+			background-color: silver;
+			display: block;
+			width: 10px;
+			height: 10px;
+			float: left;
+			margin: 10px;
+		}
+		.pins {
+			margin-left: calc(50% - 75px);
+		}
+		#one:checked~#slider>.pins>label:nth-child(1),
+		#two:checked~#slider>.pins>label:nth-child(2),
+		#three:checked~#slider>.pins>label:nth-child(3),
+		#four:checked~#slider>.pins>label:nth-child(4),
+		#five:checked~#slider>.pins>label:nth-child(5) {
+			background-color: black;
+		}
+				.slide {
+			transition: 1s;
+			display: block;
+			position: absolute;
+			opacity: 0;
+			z-index: 0;
+			left: 0;
+			right: 0;
+		}
+
+		#one:checked~#slider>.slide:nth-child(1),
+		#two:checked~#slider>.slide:nth-child(2),
+		#three:checked~#slider>.slide:nth-child(3),
+		#four:checked~#slider>.slide:nth-child(4),
+		#five:checked~#slider>.slide:nth-child(5) {
+			z-index: 1;
+			opacity: 1;
+		}
+		.pins {
+			position: absolute;
+			top: 260px;
+		}
+		#slider {
+			position: relative;
+            }
+    </style>
+</head>
 <body>
-    <h1>добавить стили и расставить for и src так, чтобы работала фотогаллерея</h1>
-	<input type="radio" id="one">
-	<input type="radio" id="two">
-	<input type="radio" id="three">
-	<input type="radio" id="four">
-	<input type="radio" id="five">
+	<input type="radio" id="one" name="photos" checked>
+	<input type="radio" id="two" name="photos">
+	<input type="radio" id="three" name="photos">
+	<input type="radio" id="four" name="photos">
+	<input type="radio" id="five" name="photos">
 	<div id="slider">
 		<section class="slide">
-			<img src="">
-			<label for="" class="prevSlide"></label>
-			<label for="" class="nextSlide"></label>
+			<img src="https://pbs.twimg.com/profile_images/634033856228761600/pGZGpB2h_400x400.jpg">
+			<label for="five" class="prevSlide"></label>
+			<label for="two" class="nextSlide"></label>
 		</section>
 		<section class="slide">
-			<img src="">
-			<label for="" class="prevSlide"></label>
-			<label for="" class="nextSlide"></label>
+			<img src="https://cdn140.picsart.com/286207631064201.jpg?c256x256">
+			<label for="one" class="prevSlide"></label>
+			<label for="three" class="nextSlide"></label>
 		</section>
 		<section class="slide">
-			<img src="">
-			<label for="" class="prevSlide"></label>
-			<label for="" class="nextSlide"></label>
+			<img src="https://cdn55.picsart.com/171055655000202.jpeg?c256x256">
+			<label for="two" class="prevSlide"></label>
+			<label for="four" class="nextSlide"></label>
 		</section>
 		<section class="slide">
-			<img src="">
-			<label for="" class="prevSlide"></label>
-			<label for="" class="nextSlide"></label>
+			<img src="https://pbs.twimg.com/profile_images/378800000171549161/92d1cc09ecb7cdee6a85bf2e83c1c4fc.jpeg">
+			<label for="three" class="prevSlide"></label>
+			<label for="five" class="nextSlide"></label>
 		</section>
 		<section class="slide">
-			<img src="">
-			<label for="" class="prevSlide"></label>
-			<label for="" class="nextSlide"></label>
+			<img src="https://pbs.twimg.com/profile_images/2742522853/2ffefd53259c311ae6d3076b046b8852.png">
+			<label for="four" class="prevSlide"></label>
+			<label for="one" class="nextSlide"></label>
 		</section>
 		<div class="pins">
-			<label for=""></label>
-			<label for=""></label>
-			<label for=""></label>
-			<label for=""></label>
-			<label for=""></label>
+			<label for="one"></label>
+			<label for="two"></label>
+			<label for="three"></label>
+			<label for="four"></label>
+			<label for="five"></label>
 		</div>
 	</div>
 </body>
