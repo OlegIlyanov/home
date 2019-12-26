@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Сверстать макет </title>
+    <!--
+    Сверстать с помощью flexbox:
+    <640 - блоки в столбик, блоки 2, 10, 11, 12 - прячем, реклама(бл.7 закрывается), меню выпадающее и fixed
+    640...1024 - как на макете
+    1024...1200 - блоки 4 и 7 становятся горизонтально
+    > 1200 - максимальная ширина 1200px и центрирование по горизонтали
+    -->
+</head>
+<style>
+    @media screen and (min-width: 640px) {
+        body {
+            display: flex;
+        }
+        body>.wrapper>header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .aside {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .art {
+            display: flex;
+            flex-wrap: wrap
+        }
+        #box1 {
+            width: 120px;
+            height: 110px;
+            background: grey;
+        }
+        #box2 {
+            width: 250px;
+            height: 110px;
+            background: grey;
+        }
+        #box3 {
+            width: 510px;
+            height: 110px;
+            background: grey;
+        }
+        #box4 {
+            width: 180px;
+            height: 330px;
+            background: grey;
+        }
+        #box7 {
+            width: 180px;
+            height: 130px;
+            background: grey;
+        }
+        #box5 {
+            width: 725px;
+            height: 210px;
+            background: Gainsboro;
+            margin-left: 200px;
+            margin-top: -450px;
+        }
+        #box8 {
+            width: 350px;
+            height: 200px;
+            background: Gainsboro;
+        }
+        #box9 {
+            width: 350px;
+            height: 200px;
+            background: Gainsboro;
+        }
+        .art>ul>li {
+            list-style: none;
+            height: 100px;
+            width: 130px;
+            background: Gainsboro;
+            flex-flow: row;
+        }
+    }
+</style>
+<body>
+	<div class="wrapper">
+		<header>
+			<div id="box1">1</div>
+			<div id="box2">2</div>
+			<div id="box3">3</div>
+		</header>
+		<hr>
+		<main>
+			<aside class="aside">
+				<div id="box4">4</div>
+				<div id="box7">7</div>
+			</aside>
+			<article class="art">
+				<div id="box5">5</div>
+				<ul>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+				</ul>
+				<div id="box8">8</div>
+				<div id="box9">9</div>
+			</article>
+			<hr>
+		</main>
+		<footer>
+			<div>10</div>
+			<div>11</div>
+			<div>12</div>
+			<div>13</div>
+		</footer>
+	</div>
+</body>
+
+</html>
