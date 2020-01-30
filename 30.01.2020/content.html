@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .data-buttons {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <form class="profile-form" action="" method="POST" onsubmit="showDataButtons()">
+            <p class="profile-item">
+                <label for="profile-fullname">ФИО</label><br>
+                <input id="profile-fullname" type="text" name="fullname" value="" placeholder="Петров А.А.">
+            </p>
+            <p class="profile-item">
+                <label for="profile-age">Возраст</label><br>
+                <input id="profile-age" type="text" name="age" value="" placeholder="25 лет">
+            </p>
+            <p class="profile-item">
+                <label for="profile-country">Страна</label><br>
+                <input id="profile-country" type="text" name="country" value="" placeholder="Россия">
+            </p>
+            <p class="profile-item">
+                <label for="profile-gender-male">Мужской</label>
+                <input id="profile-gender-male" type="radio" name="gender" value="male" title="Мужской">
+                <label for="profile-gender-female">Женский</label>
+                <input id="profile-gender-female" type="radio" name="gender" value="female" title="Женский">
+            </p> 
+            <button class="button" type="submit">Отправить</button>
+        </form> 
+        <button class="data-buttons">Показать данные</button>
+        <button class="data-buttons">Показать статистику</button>
+    </div>
+    <script> 
+    let button = document.querySelector(".button"); 
+    // получаем форму
+    let form = document.querySelector("form"); 
+
+    // получаем элемент
+    let fullname = form.elements.fullname; 
+    let age = form.elements.age;
+    let country = form.elements.country;
+    let gender = form.elements.gender;
+
+    function showDataButtons() {
+        button.className = "show"
+    }
+    // alert(elem.value);
+    </script>
+</body>
+</html>
