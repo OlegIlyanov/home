@@ -5,56 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .data-buttons {
-            display: none;
-        }
-        .show {
-            display: block;
-        }
-    </style>
 </head>
 <body>
-    <div id="content">
-        <form class="profile-form" action="" method="POST" onsubmit="showDataButtons()">
-            <p class="profile-item">
-                <label for="profile-fullname">ФИО</label><br>
-                <input id="profile-fullname" type="text" name="fullname" value="" placeholder="Петров А.А.">
-            </p>
-            <p class="profile-item">
-                <label for="profile-age">Возраст</label><br>
-                <input id="profile-age" type="text" name="age" value="" placeholder="25 лет">
-            </p>
-            <p class="profile-item">
-                <label for="profile-country">Страна</label><br>
-                <input id="profile-country" type="text" name="country" value="" placeholder="Россия">
-            </p>
-            <p class="profile-item">
-                <label for="profile-gender-male">Мужской</label>
-                <input id="profile-gender-male" type="radio" name="gender" value="male" title="Мужской">
-                <label for="profile-gender-female">Женский</label>
-                <input id="profile-gender-female" type="radio" name="gender" value="female" title="Женский">
-            </p> 
-            <button class="button" type="submit">Отправить</button>
-        </form> 
-        <button class="data-buttons">Показать данные</button>
-        <button class="data-buttons">Показать статистику</button>
-    </div>
-    <script> 
-    let button = document.querySelector(".button"); 
-    // получаем форму
-    let form = document.querySelector("form"); 
+    <div id="content"></div>
+<script>
+    var storage = [];
 
-    // получаем элемент
-    let fullname = form.elements.fullname; 
-    let age = form.elements.age;
-    let country = form.elements.country;
-    let gender = form.elements.gender;
+		function createForm() {
+			var html = [
+				"<form id='dataForm'>",
+				"<label>ФИО: <input id='fio' /></label><br />",
+				"<label>Возраст: <input id='age' /></label><br />",
+				"<label>Страна проживания: <input id='country' /></label><br />",
+				"<label>Пол: <input name='gender' type='radio' value='М' checked/>М <input name='gender' type='radio' value='Ж'/>Ж </label><br />",
+				"<label>Образование: <select id='education'>",
+				"<option value='Начальное'>Начальное</option>",
+				"<option value='Базовое'>Базовое</option>",
+				"<option value='Среднее'>Среднее</option>",
+				"<option value='Высшее'>Высшее</option>",
+				"<option value='Ученая степень'>Ученая степень</option>",
+				"</select><br />",
+				"<button>Добавить</button>",
+				"</form>",
+				"<div id='output'>",
+					"<div id='buttons'></div>",
+					"<div id='viewData'></div>",
+				"</div>"
+			]
+			return (html.join(""));
+		}
 
-    function showDataButtons() {
-        button.className = "show"
-    }
-    // alert(elem.value);
-    </script>
+		function addEventsToForm() {
+			var dataForm = document.getElementById("dataForm");
+			var btn = dataForm.querySelector("button");
+			btn.addEventListener('click', function (e) {
+				storage.push({
+					fio: fio.value,
+					age: age.value,
+					coutry: country.value,
+					gender: dataForm.querySelector("input:checked").value,
+					education: education.value
+				});
+				e.preventDefault();
+				dataForm.reset();
+				showButtons();
+			});
+		}
+
+		function showButtons() {
+			var html = [
+				"<button id='data'>Показать данные</button>",
+				"<button id='stat'>Показать статистику</button>"
+			];
+			// content.innerHTML += html.join(""); // так делать нельзя, потому что для нового контента будут удалены все обработчики событий
+			buttons.innerHTML = html.join("");
+			addEventsToButtons();
+		}
+
+		function addEventsToButtons() {
+			data.addEventListener("click", function(e) {
+				showData();
+				e.preventDefault();
+			});
+			stat.addEventListener("click", function(e) {
+				showStat();
+				e.preventDefault();
+			});
+		}
+
+		function showData() {
+			var html = [
+				"<table>",
+				"<thead>",
+				"<tr>",
+					"<th>ФИО</th>",
+					"<th>Возраст</th>",
+					"<th>Страна</th>",
+					"<th>Пол</th>",
+					"<th>Образование</th>",
+				"</tr>",
+				"</thead>",
+				"<tbody>",
+			]
+			for (var i=0; i<storage.length; i++) {
+				html.push([
+					"<tr>",
+						"<td>",
+							storage[i].fio,
+						"</td>",
+						"<td>",
+							storage[i].age,
+						"</td>",
+						"<td>",
+							storage[i].country,
+						"</td>",
+						"<td>",
+							storage[i].gender,
+						"</td>",
+						"<td>",
+							storage[i].education,
+						"</td>",
+
+					"</tr>"].join("")
+				);
+			}
+			html.push("</tbody></table>");
+			viewData.innerHTML = html.join("");
+		}
+		function showStat() {
+			var stats = {
+				male: 0,
+				female: 0,
+				adult: 0
+			};
+			for (var i=0; i<storage.length; i++) {
+				if (storage[i].gender === "М" ) {
+					stats.male++;
+				}
+				if (storage[i].gender === "Ж" ) {
+					stats.female++;
+				}
+				if (storage[i].age >= 18) {
+					stats.adult++;
+				}
+			}
+
+			viewData.innerHTML = `Всего: ${storage.length}, мужчин: ${stats.male}, женщин: ${stats.female}, совершеннолетних: ${stats.adult}`
+		}
+
+		content.innerHTML = createForm();
+		addEventsToForm();
+</script>
 </body>
 </html>
